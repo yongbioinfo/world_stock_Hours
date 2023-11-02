@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세계 주식 시장 오픈 시간</title>
+    <style>
+        /* 스타일 추가 (필요에 따라 수정하세요) */
+        .market {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>세계 주식 시장 오픈 시간</h1>
+
+<div class="market us-market">
+    <div class="market-name">미국 주식 시장</div>
+    <div class="time">월요일 - 금요일: 09:30 - 16:00</div>
+    <div class="korean-time">한국 시간: 월요일 - 토요일: 23:30 - 06:00</div>
+    <div class="local-time">현지 시간: <script>document.write(getLocalTime(-4));</script></div> <!-- New York is UTC-4 -->
+    <div class="countdown"></div>
+</div>
+
+<div class="market">
+    <div class="market-name">런던 주식 시장</div>
+    <div class="time">월요일 - 금요일: 08:00 - 16:30</div>
+    <div class="korean-time">한국 시간: 월요일 - 토요일: 16:00 - 00:30</div>
+    <div class="local-time">현지 시간: <script>document.write(getLocalTime(1));</script></div> <!-- New York is UTC-4 -->
+    <div class="countdown"></div>
+</div>
+
+<div class="market">
+    <div class="market-name">중국 주식 시장</div>
+    <div class="time">월요일 - 금요일: 09:30 - 15:00</div>
+    <div class="korean-time">한국 시간: 월요일 - 금요일: 10:30 - 16:00</div>
+    <div class="local-time">현지 시간: <script>document.write(getLocalTime(8));</script></div> <!-- New York is UTC-4 -->
+    <div class="countdown"></div>
+</div>
+
+<div class="market">
+    <div class="market-name">일본 주식 시장</div>
+    <div class="time">월요일 - 금요일: 09:00 - 15:00</div>
+    <div class="korean-time">한국 시간: 월요일 - 금요일: 09:00 - 15:00</div>
+    <div class="local-time">현지 시간: <script>document.write(getLocalTime(9));</script></div> <!-- New York is UTC-4 -->
+    <div class="countdown"></div>
+</div>
+
+<div class="market">
+    <div class="market-name">인도 주식 시장</div>
+    <div class="time">월요일 - 금요일: 09:15 - 15:30</div>
+    <div class="korean-time">한국 시간: 월요일 - 금요일: 12:45 - 19:00</div>
+    <div class="local-time">현지 시간: <script>document.write(getLocalTime(5.5));</script></div> <!-- New York is UTC-4 -->
+    <div class="countdown"></div>
+</div>
+
+<div class="market">
+    <div class="market-name">호주 주식 시장</div>
+    <div class="time">월요일 - 금요일: 10:00 - 16:00</div>
+    <div class="korean-time">한국 시간: 월요일 - 금요일: 12:00 - 18:00</div>
+    <div class="local-time">현지 시간: <script>document.write(getLocalTime(10));</script></div>
+    <div class="countdown"></div>
+</div>
+
+<div class="market">
+    <div class="market-name">캐나다 주식 시장</div>
+    <div class="time">월요일 - 금요일: 09:30 - 16:00</div>
+    <div class="korean-time">한국 시간: 월요일 - 금요일: 23:30 - 06:00 (다음날)</div>
+    <div class="local-time">현지 시간: <script>document.write(getLocalTime(-4));</script></div>
+    <div class="countdown"></div>
+</div>
+
+<div class="market">
+    <div class="market-name">브라질 주식 시장</div>
+    <div class="time">월요일 - 금요일: 10:00 - 17:00</div>
+    <div class="korean-time">한국 시간: 월요일 - 금요일: 22:00 - 05:00 (다음날)</div>
+    <div class="local-time">현지 시간: <script>document.write(getLocalTime(-3));</script></div>
+    <div class="countdown"></div>
+</div>
+
+
+<!-- 다른 나라의 주식 시장 정보도 유사한 형식으로 추가 -->
+
+<script src="script.js"></script>  <!-- JavaScript 파일 연결 -->
+</body>
+</html>
