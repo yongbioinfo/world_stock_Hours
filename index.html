@@ -69,11 +69,24 @@
             color: #007BFF;  /* bright blue */
             font-weight: bold;
         }
+
+        .korea-current-time {
+            position: absolute;
+            top: 20px;          /* 위치를 조정하실 수 있습니다. */
+            right: 20px;        /* 위치를 조정하실 수 있습니다. */
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.5em;
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
 
     <div class="header-image">
+        <div class="korea-current-time" id="koreaTime"></div>
         <img src="https://raw.githubusercontent.com/yongbioinfo/world_stock_Hours/main/Frontimage.png" alt="주식 시장 이미지" width="100%">
     </div>
 
