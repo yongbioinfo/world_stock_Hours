@@ -24,27 +24,44 @@ function getCountdown(targetHour, targetMinute) {
     return `${hours}시 ${minutes}분 ${seconds}초`;
 }
 
-function updateCountdown() {
+function updateCountdowns() {
     const usMarketCountdown = document.querySelector('.us-market .countdown');
     usMarketCountdown.textContent = getCountdown(9, 30);
 
-    setTimeout(updateCountdown, 1000);
+    const chinaMarketCountdown = document.querySelector('.china-market .countdown');
+    chinaMarketCountdown.textContent = getCountdown(9, 30);
+
+    // 다른 나라들에 대한 카운트다운도 이와 같은 방식으로 추가할 수 있습니다.
+}
+
+function updateLocalTimes() {
+    const usLocalTimeElement = document.querySelector('.us-market .local-time');
+    usLocalTimeElement.innerHTML = `현지 시간: ${getLocalTime(-4)}`; // 미국 동부 표준시 (EDT)
+
+    const chinaLocalTimeElement = document.querySelector('.china-market .local-time');
+    chinaLocalTimeElement.innerHTML = `현지 시간: ${getLocalTime(8)}`; // 중국 표준시 (CST)
+    // 다른 나라들에 대한 현지 시간도 이와 같은 방식으로 추가할 수 있습니다.
+}
+
+function updateKoreanTime() {
+    const now = new Date();
+    const koreanTimeString = new Intl.DateTimeFormat('ko-KR', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZone: 'Asia/Seoul'
+    }).format(now);
+
+    document.getElementById('koreaTime').innerText = `한국 시간: ${koreanTimeString}`;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    function updateKoreanTime() {
-        const now = new Date();
-        const koreaTime = new Date(now.getTime() + (9 * 60 * 60 * 1000));
-        const hours = koreaTime.getHours();
-        const minutes = koreaTime.getMinutes();
-        const seconds = koreaTime.getSeconds();
-        
-        const formattedTime = `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-
-        document.getElementById('koreaTime').innerText = `한국 시간: ${formattedTime}`;
-    }
-
     updateKoreanTime();
     setInterval(updateKoreanTime, 1000);
-    updateCountdown();
+    
+    updateLocalTimes();
+    setInterval(updateLocalTimes, 1000);
+    
+    updateCountdowns();
+    setInterval(updateCountdowns, 1000);
 });
