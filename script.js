@@ -28,6 +28,9 @@ function updateCountdowns() {
     const usMarketCountdown = document.querySelector('.us-market .countdown');
     usMarketCountdown.textContent = getCountdown(9, 30);
 
+    const ukMarketCountdown = document.querySelector('.uk-market .countdown');
+    ukMarketCountdown.textContent = getCountdown(9, 30);    
+
     const chinaMarketCountdown = document.querySelector('.china-market .countdown');
     chinaMarketCountdown.textContent = getCountdown(9, 30);
 
@@ -40,6 +43,9 @@ function updateLocalTimes() {
 
     const chinaLocalTimeElement = document.querySelector('.china-market .local-time');
     chinaLocalTimeElement.innerHTML = `현지 시간: ${getLocalTime(8)}`; // 중국 표준시 (CST)
+    
+    const ukLocalTimeElement = document.querySelector('.uk-market .local-time');
+    ukLocalTimeElement.innerHTML = `현지 시간: ${getLocalTime(8)}`; // 중국 표준시 (CST)
     // 다른 나라들에 대한 현지 시간도 이와 같은 방식으로 추가할 수 있습니다.
 }
 
